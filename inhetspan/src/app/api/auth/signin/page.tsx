@@ -51,7 +51,7 @@ const SignInPage: NextPage = () => {
                 width={200}
                 height={200}
             />
-              <div className='sm:rounded-5xl w-full -mx-4 flex-auto bg-white px-4 header-shadow-right sm:mx-0 sm:flex-none sm:p-10'>
+              <div className='sm:rounded-5xl w-full -mx-4 flex-auto bg-background px-4 header-shadow-right sm:mx-0 sm:flex-none sm:p-10'>
                   <form onSubmit={handleSubmit(handleFormSubmit)}>
                       <div className='space-y-2'>
                           <label htmlFor='password' className='block text-md font-medium text-gray-700'>

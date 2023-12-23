@@ -10,7 +10,7 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 222 5% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -22,7 +22,7 @@
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
  
-    --secondary: 210 40% 96.1%;
+    --secondary: 1 91% 27%;
     --secondary-foreground: 0 0% 35%;
  
     --muted: 210 40% 96.1%;
@@ -95,7 +95,7 @@
   }
 
   h2 {
-    @apply mt-4 mb-4 text-5xl font-poppins font-semibold;
+    @apply mt-4 mb-4 text-5xl font-poppins font-normal;
   }
 
   h3 {
@@ -226,4 +226,10 @@ html.lenis {
 }
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+
+/* globals.css */
+.bg-gradient-custom {
+  background-image: linear-gradient(to right, hsl(var(--background)) 45%, transparent 90%);
 }

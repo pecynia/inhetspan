@@ -13,7 +13,7 @@ import { ChevronDown } from 'lucide-react';
 const DropdownMenu = ({ dropdownRoutes, onMouseEnter, onMouseLeave }: { dropdownRoutes: Route[], onMouseEnter: () => void, onMouseLeave: () => void }) => {
   return (
     <motion.div 
-      className="absolute left-0 -ml-2 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+      className="absolute left-0 -ml-2 mt-2 w-48 rounded-md shadow-lg bg-background ring-1 ring-black ring-opacity-5"
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
@@ -24,7 +24,7 @@ const DropdownMenu = ({ dropdownRoutes, onMouseEnter, onMouseLeave }: { dropdown
       <div className="py-2">
         {dropdownRoutes.map((route, index) => (
           <Link key={index} href={route.href}>
-            <p className="block px-4 py-3 text-md font-light text-primary hover:bg-secondary">{route.label}</p>
+            <p className="block px-4 py-3 text-md font-light text-primary hover:bg-gray-100">{route.label}</p>
           </Link>
         ))}
       </div>
@@ -45,7 +45,7 @@ export default function Header() {
   };
 
   return (
-    <HeaderClient className='sticky top-0 left-0 w-full bg-secondary px-10 py-7 transition-transform duration-300 z-10'>
+    <HeaderClient className='sticky top-0 left-0 w-full px-10 py-7 transition-transform duration-300'>
       <nav className='flex justify-between items-center relative'>
         <Image src='/logo.png' alt='Logo' width={160} height={100} priority className='absolute pl-4' />
         <div className='flex items-center space-x-8 mx-auto'>
