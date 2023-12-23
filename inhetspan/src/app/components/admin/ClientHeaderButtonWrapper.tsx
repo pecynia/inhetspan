@@ -1,7 +1,7 @@
 "use client"
 
 import { useSession } from 'next-auth/react'
-import { HeaderButton } from './HeaderButton'
+import { HeaderButton } from '@/app/components/admin/HeaderButton'
 
 const ClientHeaderButtonWrapper = () => {
     const { data: session } = useSession()
