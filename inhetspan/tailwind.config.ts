@@ -21,6 +21,7 @@ module.exports = {
         garamond: "EB Garamond, serif",
         raleway: "Raleway, sans-serif",
         exo: "Exo, sans-serif",
+        poppins: "Poppins, sans-serif",
       },
       colors: {
         border: "hsl(var(--border))",
