@@ -11,11 +11,12 @@ interface SingleImageProps {
   documentId: string
   image: string
   imagePosition?: "left" | "right"
+  theme?: "light" | "dark"
   verticalPosition?: "above" | "below"
   className?: string
 }
 
-const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, imagePosition = "left", verticalPosition= "above", className }) => {
+const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imagePosition = "left", theme = "dark", verticalPosition= "above", className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -52,13 +53,13 @@ const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, i
   const TextEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge("mb-20 col-span-full lg:col-span-3 pb-10 flex px-10 pt-4", imagePosition === 'left' && 'lg:order-2')}>
+      className={twMerge("mb-10 mr-10 col-span-full lg:col-span-3 pb-10 flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
         <EditorWrapper documentId={documentId} />
     </motion.div>
   )
 
   const SingleImg = (
-    <div className={twMerge("pt-0 relative col-span-full lg:col-span-2", imagePosition === 'right' && 'lg:order-2')}>
+    <div className={twMerge("pt-10 lg:pt-0 relative col-span-full lg:col-span-2 h-[500px] lg:h-full", imagePosition === 'right' && 'lg:order-2')}>
       <motion.div layout
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -68,10 +69,10 @@ const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, i
           ease: [0, 0.71, 0.2, 1.01]
         }}
         ref={container}
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.3]) }} 
-        className={twMerge("w-full justify-center items-center h-full relative lg:absolute top-[35%] lg:left-[10%] left-[25%] flex-shrink-0 mx-auto lg:ml-10 lg:mr-0", className)}
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.15]) }} 
+        className={twMerge("w-full lg:w-[80%] h-full lg:absolute top-[-5%] left-0 flex-shrink-0 mx-auto lg:ml-10 lg:mr-0", className)}
       >
-        <Image src={image} alt="Image" width={200} height={200} className="object-cover object-center"/>
+        <Image src={image} alt="Image" fill className="object-contain object-center"/>
       </motion.div>
     </div>
   )
@@ -82,7 +83,7 @@ const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, i
       animate={{ opacity: 1, y: '0%' }}
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       ref={container} 
-      className="-mt-4 space-x-0 lg:space-x-10 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-10 p-4 "
+      className="mt-0 space-x-0 lg:space-x-10  pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-10 p-4 "
     >
       {verticalPosition === 'above' ? SingleImg : TextEditor}
       {verticalPosition === 'below' ? SingleImg : TextEditor}
@@ -90,4 +91,4 @@ const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, i
   )
 }
 
-export default TextSingleImageSmall
+export default TextSingleImage
