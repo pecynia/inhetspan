@@ -1,8 +1,8 @@
 "use client"
 
-import EditorWrapper from "@/app/components/editor/EditorWrapper";
-import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
+import EditorWrapper from "@/app/components/editor/EditorWrapper"
+import { motion } from "framer-motion"
+import { twMerge } from "tailwind-merge"
 
 const TextComponent = ({ documentId, className } : { documentId: string, className: string }) => {
   return (
@@ -13,7 +13,7 @@ const TextComponent = ({ documentId, className } : { documentId: string, classNa
     >
       <EditorWrapper documentId={documentId} />
     </motion.div>
-  );
-};
+  )
+}
 
-export default TextComponent;
+export default TextComponent

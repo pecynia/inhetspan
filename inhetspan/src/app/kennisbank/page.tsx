@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
-import TextComponent from '@/app/components/editor/TextComponent';
+import React from 'react'
+import Link from 'next/link'
+import { ExternalLink } from 'lucide-react'
+import TextComponent from '@/app/components/editor/TextComponent'
 
 const LinksPage = () => {
   const linkCategories = [
@@ -78,12 +78,12 @@ const LinksPage = () => {
         { label: 'Pil Vergeten', href: 'http://www.thuisarts.nl/anticonceptiepil/ik-ben-pil-vergeten' },
       ],
     },
-  ];
+  ]
   
 
   return (
     <div className='px-4 lg:px-24 mx-auto'>
-      <TextComponent documentId='links-title' className='text-3xl font-bold min-h-[240px]' />
+      <TextComponent documentId='links-title' className='min-h-[240px]' />
   
       <div className='bg-primary text-primary-foreground rounded-3xl p-4 space-y-10 mb-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-10'>
@@ -106,7 +106,7 @@ const LinksPage = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }  
 
-export default LinksPage;
+export default LinksPage

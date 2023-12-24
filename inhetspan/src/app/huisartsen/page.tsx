@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { Stethoscope, PhoneCall, ExternalLink } from 'lucide-react';
-import TextComponent from '@/app/components/editor/TextComponent';
+import React from 'react'
+import Link from 'next/link'
+import { Stethoscope, PhoneCall, ExternalLink } from 'lucide-react'
+import TextComponent from '@/app/components/editor/TextComponent'
 
 const HuisartsenPage = () => {
   const huisartsenInfo = [
@@ -20,14 +20,14 @@ const HuisartsenPage = () => {
       href: 'https://praktijkvanduivenboden.onzehuisartsen.nl/',
       spoedNummer: '0264422911'
     },
-  ];
+  ]
 
   const apothekenLinks = [
     { label: 'Apotheek het Span (voorheen Baljet)', href: 'https://www.alphega-apotheek.nl/web/apotheekbaljet/herhaalrecepten' },
     { label: 'Apotheek Witteveen', href: 'https://www.alphega-apotheek.nl/web/apotheekwitteveen/herhaalrecepten' },
     { label: 'Apotheek de Witte', href: 'https://www.alphega-apotheek.nl/web/apotheekdewitte/herhaalrecepten' },
     { label: 'Apotheek Velperweg', href: 'https://www.alphega-apotheek.nl/web/apotheekvelperweg/herhaalrecepten' },
-  ];
+  ]
 
   return (
     <div className='px-4 lg:px-24 mx-auto'>
@@ -71,7 +71,7 @@ const HuisartsenPage = () => {
         <TextComponent documentId='herhaal-gemak' className='' />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HuisartsenPage;
+export default HuisartsenPage

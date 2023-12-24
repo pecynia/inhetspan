@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import ClientHeaderButtonWrapper from '@/app/components/admin/ClientHeaderButtonWrapper';
-import { HeaderClient } from '@/app/components/HeaderClient';
-import { routes, Route } from '@/dictionaries/routes';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import ClientHeaderButtonWrapper from '@/app/components/admin/ClientHeaderButtonWrapper'
+import { HeaderClient } from '@/app/components/HeaderClient'
+import { routes, Route } from '@/dictionaries/routes'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import { ChevronDown } from 'lucide-react'
 
 const DropdownMenu = ({ dropdownRoutes, onMouseEnter, onMouseLeave }: { dropdownRoutes: Route[], onMouseEnter: () => void, onMouseLeave: () => void }) => {
   return (
@@ -29,23 +29,23 @@ const DropdownMenu = ({ dropdownRoutes, onMouseEnter, onMouseLeave }: { dropdown
         ))}
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
 export default function Header() {
-  const pathname = usePathname();
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname()
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const showDropdown = (href: string) => {
-    setActiveDropdown(href);
-  };
+    setActiveDropdown(href)
+  }
 
   const hideDropdown = () => {
-    setActiveDropdown(null);
-  };
+    setActiveDropdown(null)
+  }
 
   return (
-    <HeaderClient className='sticky top-0 left-0 w-full px-10 py-7 transition-transform duration-300'>
+    <HeaderClient className='sticky z-10 top-0 left-0 w-full px-10 py-7 transition-transform duration-300'>
       <nav className='flex justify-between items-center relative'>
         <Image src='/logo.png' alt='Logo' width={160} height={100} priority className='absolute pl-4' />
         <div className='flex items-center space-x-8 mx-auto'>
@@ -77,5 +77,5 @@ export default function Header() {
         </div>
       </nav>
     </HeaderClient>
-  );
+  )
 }

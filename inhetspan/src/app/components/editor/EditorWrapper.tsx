@@ -14,9 +14,9 @@ import TextStyle from '@tiptap/extension-text-style'
 import { Button } from "@/app/components/ui/button"
 
 interface EditorWrapperProps {
-    documentId: string;
-    link?: string;
-    buttonText?: string;
+    documentId: string
+    link?: string
+    buttonText?: string
 }
 
 // TODO: CONVERT TO SERVER COMPONENT (so we don't fetch everytime)
