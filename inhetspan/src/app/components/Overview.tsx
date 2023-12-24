@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react'
 import Lenis from "@studio-freight/lenis"
 import { useTransform, useScroll, motion } from "framer-motion"
-import Link from 'next/link';
-import { Pill, Stethoscope, Syringe, WheatOff, Speech, HeartPulse, ExternalLink } from 'lucide-react';
+import Link from 'next/link'
+import { Pill, Stethoscope, Syringe, WheatOff, Speech, HeartPulse, ExternalLink } from 'lucide-react'
 
 const Overview = () => {
     const offers = [
@@ -13,46 +13,46 @@ const Overview = () => {
         { id: 3, title: 'Logopedie', icon: <Speech size={32} />, href: 'https://www.logopedietop.nl/', color: 'bg-purple-100' },
         { id: 4, title: 'Voedselallergie', icon: <WheatOff size={32} />, href: 'https://allergie-envoeding.nl/', color: 'bg-green-100' },
         { id: 5, title: 'Prikpost Rijnstate', icon: <HeartPulse size={32} />, href: 'https://www.zekerweten.nl/', color: 'bg-pink-100' },
-    ];
+    ]
 
     const huisartsenLinks = [
         { label: 'Huisartsenpraktijk Wibbelink', href: 'https://huisartswibbelink.onzehuisartsen.nl/' },
         { label: 'Huisartsenpraktijk Linders & Verduijn', href: 'https://praktijklindersenverduijn.onzehuisartsen.nl/' },
         { label: 'Huisartsenpraktijk van Duivenboden', href: 'https://praktijkvanduivenboden.onzehuisartsen.nl/' },
-    ];
+    ]
 
-    const container = useRef<HTMLDivElement | null>(null);
-    const [dimension, setDimension] = useState({ width: 0, height: 0 });
+    const container = useRef<HTMLDivElement | null>(null)
+    const [dimension, setDimension] = useState({ width: 0, height: 0 })
     const { scrollYProgress } = useScroll({
       target: container,
       offset: ["start end", "end start"],
-    });
+    })
 
     useEffect(() => {
         const lenis = new Lenis({
           smoothWheel: true,
           smoothTouch: true,
           normalizeWheel: true,
-        });
+        })
 
         const raf = (time: number) => {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        };
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
 
         const resize = () => {
-          setDimension({ width: window.innerWidth, height: window.innerHeight });
-        };
+          setDimension({ width: window.innerWidth, height: window.innerHeight })
+        }
 
-        window.addEventListener("resize", resize);
-        requestAnimationFrame(raf);
-        resize();
+        window.addEventListener("resize", resize)
+        requestAnimationFrame(raf)
+        resize()
 
         return () => {
-          lenis.destroy();
-          window.removeEventListener("resize", resize);
-        };
-      }, []);
+          lenis.destroy()
+          window.removeEventListener("resize", resize)
+        }
+      }, [])
 
     return (
         <motion.div 
@@ -92,8 +92,8 @@ const Overview = () => {
                                 transition={{ duration: 0.7, delay: 0.2, ease: [0, 0.71, 0.2, 1.01] }}
                                 className='pb-4 mb-4 border-b border-gray-300' 
                             >
-                                <Link href={link.href}>
-                                    <p className='text-primary-foreground flex'>
+                                <Link href={link.href} className=''>
+                                    <p className='text-primary-foreground hover:text-blue-800 flex'>
                                         {link.label} <ExternalLink size={20} className="ml-2" />
                                     </p>
                                 </Link>
@@ -103,7 +103,7 @@ const Overview = () => {
                 </div>
             </div>
         </motion.div>
-    );
-};
+    )
+}
 
-export default Overview;
+export default Overview

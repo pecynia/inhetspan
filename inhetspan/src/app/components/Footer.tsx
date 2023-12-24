@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { routes } from '@/dictionaries/routes';
-import { contactInfo } from '@/dictionaries/contactInfo';
+import { contactInfo, location } from '@/dictionaries/contactInfo';
 import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
@@ -12,7 +12,9 @@ const Footer = () => {
                 {/* Logo & Description */}
                 <div className="flex flex-col items-center">
                     <Image src='/logo.png' alt='Logo' width={160} height={100} priority />
-                    <p className="text-center mt-4 mb-2">het Span medisch centrum</p>
+                    <p className="text-center mt-4 mb-2">het Span Medisch Centrum</p>
+                    <p className="text-center font-thin">{location.street} {location.number}, {location.city}</p>
+                    <p className="text-center font-thin">{location.zip}</p>
                 </div>
 
                 {/* Navigation */}

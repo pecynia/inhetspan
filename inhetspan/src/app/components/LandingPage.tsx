@@ -4,8 +4,8 @@ import TextComponent from '@/app/components/editor/TextComponent'
 
 function LandingPage() {
   return (
-    <div className='mb-16 h-96'>
-        <div className='absolute top-[-5%] left-0 w-full h-full -z-10 overflow-x-hidden'>
+    <div className='mb-16 h-80'>
+        <div className='absolute top-0 left-0 w-full h-full -z-10 overflow-x-hidden'>
             <Image 
                 alt='Background Image' 
                 src='/colorful_2.png'
@@ -14,7 +14,7 @@ function LandingPage() {
             />
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-custom'></div>
         </div>
-        <div className='flex flex-col justify-center items-start'>
+        <div className='flex flex-col justify-center items-start pl-20 -mt-6'>
             <TextComponent documentId='intro' className='w-1/2' />
         </div>
     </div>

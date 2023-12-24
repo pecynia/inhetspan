@@ -1,6 +1,5 @@
 import LandingPage from '@/app/components/LandingPage'
 import Overview from '@/app/components/Overview'
-import EndNote from '@/app/components/EndNote'
 
 export default function Home() {
   return (
