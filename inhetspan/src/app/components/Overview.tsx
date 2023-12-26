@@ -4,15 +4,17 @@ import React, { useEffect, useRef, useState } from 'react'
 import Lenis from "@studio-freight/lenis"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Link from 'next/link'
-import { Pill, Stethoscope, Syringe, WheatOff, Speech, HeartPulse, ExternalLink } from 'lucide-react'
+import { Pill, Syringe, Wheat, Speech, ExternalLink } from 'lucide-react'
+import { faTooth } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Overview = () => {
     const offers = [
-        { id: 1, title: 'Apotheek', icon: <Pill size={32} />, href: 'https://www.kringarnhemseapotheken.nl/apotheek-het-span/', color: 'bg-red-100' },
-        { id: 2, title: 'Tandarts', icon: <Syringe size={32} />, href: 'https://www.tandartsinhetspan.nl/', color: 'bg-blue-100' },
-        { id: 3, title: 'Logopedie', icon: <Speech size={32} />, href: 'https://www.logopedietop.nl/', color: 'bg-purple-100' },
-        { id: 4, title: 'Voedselallergie', icon: <WheatOff size={32} />, href: 'https://allergie-envoeding.nl/', color: 'bg-green-100' },
-        { id: 5, title: 'Prikpost Rijnstate', icon: <HeartPulse size={32} />, href: 'https://www.zekerweten.nl/', color: 'bg-pink-100' },
+        { id: 1, title: 'Apotheek Het Span', icon: <Pill size={32} />, href: 'https://www.kringarnhemseapotheken.nl/apotheek-het-span/', color: 'bg-red-100' },
+        { id: 2, title: 'Tandarts In Het Span', icon: <FontAwesomeIcon icon={faTooth} size='2xl' />, href: 'https://www.tandartsinhetspan.nl/', color: 'bg-blue-100' },
+        { id: 3, title: 'Logopedie Top', icon: <Speech size={32} />, href: 'https://www.logopedietop.nl/', color: 'bg-purple-100' },
+        { id: 4, title: 'Vlieg Diëtisten', icon: <Wheat size={32} />, href: 'https://allergie-envoeding.nl/', color: 'bg-green-100' },
+        { id: 5, title: 'Prikpost Zeker Weten', icon: <Syringe size={32} />, href: 'https://www.zekerweten.nl/', color: 'bg-pink-100' },
     ]
 
     const huisartsenLinks = [
@@ -62,25 +64,9 @@ const Overview = () => {
         >
             {/* Offers Section */}
             <div className='px-6 md:px-24 lg:px-56 w-full mx-auto'>
-                <div className='mb-24'>
-                    <h2 className='text-3xl font-bold mb-8 mt-16 text-primary-foreground'>Waar wil je terecht?</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12'>
-                        {offers.map(offer => (
-                            <div key={offer.id} className={`${offer.color} rounded-lg p-6 w-full h-48 shadow-lg flex flex-col items-center justify-center`}>
-                                {offer.icon}
-                                <h3 className='text-lg font-semibold mt-4'>{offer.title}</h3>
-                                <Link href={offer.href}>
-                                    <p className="mt-2 text-blue-600 hover:text-blue-800 flex items-center">
-                                        Meer Info <ExternalLink size={20} className="ml-1" />
-                                    </p>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
+                
                 {/* Huisartsen Section */}
-                <div className='mb-20'>
+                <div className='pt-10'>
                     <h2 className='text-3xl font-bold mb-8 text-primary-foreground'>Huisartsen</h2>
                     <ul className='list-inside list-disc pl-6 border-l-2 border-secondary'>
                         {huisartsenLinks.map((link, index) => (
@@ -101,6 +87,21 @@ const Overview = () => {
                         ))}
                     </ul>
                 </div>
+
+                <div className='mb-24 -mt-5'>
+                    <h2 className='text-3xl font-bold mb-8 mt-16 text-primary-foreground'>Overige zorgverleners</h2>
+                    <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10'>
+                        {offers.map(offer => (
+                            <Link href={offer.href} key={offer.id} className={`${offer.color} rounded-lg cursor-pointer transition duration-300 ease-in-out hover:opacity-70`}>
+                                <div key={offer.id} className='p-4 w-full h-36 shadow-lg flex flex-col items-center justify-center'>
+                                    {offer.icon}
+                                    <h3 className='text-normal font-semibold mt-4'>{offer.title}</h3>                                
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </motion.div>
     )

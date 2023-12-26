@@ -52,7 +52,7 @@ const TextSingleImageSmall: React.FC<SingleImageProps> = ({ documentId, image, i
   const TextEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge("mb-20 col-span-full lg:col-span-3 pb-10 flex px-10 pt-4", imagePosition === 'left' && 'lg:order-2')}>
+      className={twMerge("mb-20 col-span-full lg:col-span-3 pb-10 flex px-0 md:px-10 pt-4", imagePosition === 'left' && 'lg:order-2')}>
         <EditorWrapper documentId={documentId} />
     </motion.div>
   )

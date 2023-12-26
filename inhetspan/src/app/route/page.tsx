@@ -1,9 +1,10 @@
 import React from 'react'
+import GoogleMaps from '../components/GoogleMaps';
 
 function page() {
   return (
     <div>
-      <h1>My Page</h1>
+      <GoogleMaps />
     </div>
   );
 }

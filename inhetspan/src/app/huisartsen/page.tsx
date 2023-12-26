@@ -23,10 +23,10 @@ const HuisartsenPage = () => {
   ]
 
   const apothekenLinks = [
-    { label: 'Apotheek het Span (voorheen Baljet)', href: 'https://www.alphega-apotheek.nl/web/apotheekbaljet/herhaalrecepten' },
-    { label: 'Apotheek Witteveen', href: 'https://www.alphega-apotheek.nl/web/apotheekwitteveen/herhaalrecepten' },
-    { label: 'Apotheek de Witte', href: 'https://www.alphega-apotheek.nl/web/apotheekdewitte/herhaalrecepten' },
-    { label: 'Apotheek Velperweg', href: 'https://www.alphega-apotheek.nl/web/apotheekvelperweg/herhaalrecepten' },
+    { label: 'Apotheek het Span (voorheen Baljet)', href: 'https://www.kringarnhemseapotheken.nl/apotheek-het-span/' },
+    { label: 'Apotheek Witteveen', href: 'https://www.kringarnhemseapotheken.nl/apotheek-witteveen/' },
+    { label: 'Apotheek de Witte', href: 'https://www.kringarnhemseapotheken.nl/apotheek-de-witte/' },
+    { label: 'Apotheek Velperweg', href: 'https://www.kringarnhemseapotheken.nl/apotheek-velperweg/' },
   ]
 
   return (

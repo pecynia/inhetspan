@@ -5,7 +5,7 @@ import { contactInfo, location } from '@/dictionaries/contactInfo';
 
 const AboutPage = () => {
     const aboutLinks = [
-        { title: 'Wat is het Span?', href: '/wat-is-het-span', color: 'bg-red-100', icon: <LibraryBig size={24} /> },
+        { title: 'Wat is Span?', href: '/wat-is-span', color: 'bg-red-100', icon: <LibraryBig size={24} /> },
         { title: 'Kunst in het Span', href: '/kunst-in-het-span', color: 'bg-blue-100', icon: <Brush size={24} /> },
         { title: 'Camerabewaking', href: '/camerabewaking', color: 'bg-green-100', icon: <LucideLockKeyhole size={24} /> },
     ];
@@ -15,7 +15,7 @@ const AboutPage = () => {
           {/* About Links */}
           <div className='mb-16 '>
               <h2 className='text-3xl font-bold mb-8 mt-16'>Kijk eens rond</h2>
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-12' >
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2 md:px-4' >
                   {aboutLinks.map((link, index) => (
                       <Link key={index} href={link.href}>
                           <div className={`cursor-pointer ${link.color} rounded-lg p-6 shadow-lg flex flex-col items-center justify-center hover:shadow-xl transition duration-300 ease-in-out`}>
@@ -29,22 +29,16 @@ const AboutPage = () => {
           {/* Contact Information */}
           <div className='bg-primary rounded-3xl p-8 text-primary-foreground mb-10'>
               <div className='mb-6'>
-                  <h2 className='text-2xl font-bold mb-4'>Contactinformatie</h2>
-                  <p className='flex items-center mb-2'>
-                      <MapPin className='mr-2' />
-                      {location.street} {location.number}, {location.city}, {location.zip}
-                  </p>
-                  <p className='flex items-center mb-2'>
-                      <Mail className='mr-2' />
-                      <Link href={`mailto:${contactInfo.email}`} className='hover:text-secondary-foreground'>
-                          {contactInfo.email}
-                      </Link>
-                  </p>
-                  <p className='flex items-center'>
-                      <Phone className='mr-2' />
-                      <Link href={`tel:${contactInfo.phone}`} className='hover:text-secondary-foreground'>
-                          {contactInfo.phone}
-                      </Link>
+                    <h2 className='text-2xl font-bold mb-4'>Contact</h2>
+                    <p className='flex items-center mb-2'>
+                        <MapPin className='mr-2' />
+                        {location.street} {location.number}, {location.city}, {location.zip}
+                    </p>
+                    <p className='flex items-center mb-2'>
+                        <Mail className='mr-2' />
+                        <Link href={`mailto:${contactInfo.email}`} className='hover:text-secondary-foreground'>
+                            {contactInfo.email}
+                        </Link>
                   </p>
               </div>
           </div>

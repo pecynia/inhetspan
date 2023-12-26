@@ -47,7 +47,9 @@ export default function Header() {
   return (
     <HeaderClient className='sticky z-10 top-0 left-0 w-full px-10 py-7 transition-transform duration-300'>
       <nav className='flex justify-between items-center relative'>
-        <Image src='/logo.png' alt='Logo' width={160} height={100} priority className='absolute pl-4' />
+        <Link href={'/'} className='absolute pl-4'>
+          <Image src='/logo.png' alt='Logo' width={160} height={100} priority />
+        </Link>
         <div className='flex items-center space-x-8 mx-auto'>
           {routes.filter(route => route.includeInHeader).map((route, index) => (
             <div key={index} className="relative">

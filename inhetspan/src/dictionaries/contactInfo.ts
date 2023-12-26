@@ -27,7 +27,7 @@ export const location: Location = {
 }
 
 export const contactInfo: ContactInfo = {
-    name: "het Span medisch centrum",
+    name: "Voor beheerszaken",
     address: `${location.street} ${location.number}, ${location.zip} ${location.city}`,
     email: "hetspan@kpnmail.nl",
     phone: "+31655744256",

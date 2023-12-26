@@ -6,7 +6,7 @@ import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-primary py-8 px-16 text-primary-foreground">
+        <footer className="bg-primary pb-8 pt-12 px-16 text-primary-foreground">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
 
                 {/* Logo & Description */}
@@ -19,7 +19,7 @@ const Footer = () => {
 
                 {/* Navigation */}
                 <div className=''>
-                    <h1 className="text-2xl text-secondary-foreground mb-4">Navigatie</h1>
+                    <h1 className="text-3xl text-primary-secondary mb-4">Navigatie</h1>
                     {routes.map(route => ( route.includeInHeader &&
                         <Link key={route.href} href={route.href}>
                             <div className="mb-2 hover:underline cursor-pointer">{route.label}</div>
@@ -29,7 +29,7 @@ const Footer = () => {
 
                 {/* Contact */}
                 <div className='space-y-2'>
-                    <h1 className="text-2xl text-secondary-foreground mb-4">Contact</h1>
+                    <h1 className="text-3xl text-primary-secondary mb-4">Contact</h1>
                     <p>{contactInfo.name}</p>
                     <div className="flex items-center mb-2 hover:text-secondary-foreground">
                         <Mail className="mr-2" />
@@ -37,12 +37,7 @@ const Footer = () => {
                             {contactInfo.email}
                         </Link>
                     </div>
-                    <div className="flex items-center hover:text-secondary-foreground">
-                        <Phone className="mr-2" />
-                        <Link href={`tel:${contactInfo.phone}`}>
-                            {contactInfo.phone}
-                        </Link>
-                    </div>
+                    
                 </div>
             </div>
 

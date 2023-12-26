@@ -8,22 +8,22 @@ export interface Route {
 export const routes: Route[] = [
     {
         href: "/",
-        label: "Home",
+        label: "Zorgverleners",
         includeInHeader: true,
     },
-    {
-        href: "/huisartsen",
-        label: "Huisartsen",
-        includeInHeader: true,
-    },
+    // {
+    //     href: "/huisartsen",
+    //     label: "Huisartsen",
+    //     includeInHeader: true,
+    // },
     {
         href: "/over",
         label: "Over het Span",
         includeInHeader: true,
         dropdown: [
             {
-                href: "/wat-is-het-span",
-                label: "Wat is het Span?",
+                href: "/wat-is-span",
+                label: "Wat is Span?",
                 includeInHeader: true,
             },
             {
@@ -44,8 +44,8 @@ export const routes: Route[] = [
         includeInHeader: true,
     },
     {
-        href: "/kennisbank",
-        label: "Kennisbank",
+        href: "/faq",
+        label: "FAQ",
         includeInHeader: true,
     },
 ]
