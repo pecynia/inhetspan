@@ -10,16 +10,16 @@ import Footer from "@/app/components/Footer"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Website Title',
-  description: 'Website Description',
+  title: 'Medisch Centrum Het Span',
+  description: 'Medisch Centrum Het Span - Samen werken aan zorg',
   openGraph: {
     type: 'website',
-    title: 'Website Title',
-    description: 'Website Description',
-    url: 'https://example.com',
+    title: 'Medisch Centrum Het Span',
+    description: 'Medisch Centrum Het Span - Samen werken aan zorg',
+    url: 'https://inhetspan.nl',
     images: [],
-    siteName: 'Website Name',
-    locale: 'en',
+    siteName: 'Medisch Centrum Het Span',
+    locale: 'nl_NL',
     ttl: 30,
   }
 }

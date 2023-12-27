@@ -79,7 +79,7 @@ const Overview = () => {
                                 className='pb-4 mb-4 border-b border-gray-300' 
                             >
                                 <Link href={link.href} className=''>
-                                    <p className='text-primary-foreground hover:text-blue-800 flex'>
+                                    <p className='text-primary-foreground hover:text-blue-400 flex'>
                                         {link.label} <ExternalLink size={20} className="ml-2" />
                                     </p>
                                 </Link>
@@ -88,6 +88,7 @@ const Overview = () => {
                     </ul>
                 </div>
 
+                {/* Overige zorgverleners Section */}
                 <div className='mb-24 -mt-5'>
                     <h2 className='text-3xl font-bold mb-8 mt-16 text-primary-foreground'>Overige zorgverleners</h2>
                     <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10'>

@@ -18,12 +18,7 @@ import {
     ListOrdered,
     Undo,
     Redo,
-    List,
     Eraser,
-    Link,
-    Anchor,
-    Palette,
-    CheckCheckIcon,
     ListChecks,
  } from 'lucide-react'
 import { Separator } from '@/app/components/ui/separator'
@@ -34,7 +29,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
     const { status, data: session } = useSession()
     if (!session) return null
     return (
-        <div className='absolute top-0 -mt-32 z-50 bg-white shadow-lg rounded-xl'>
+        <div className='absolute top-0 -mt-32 z-10 bg-white shadow-lg rounded-xl'>
             <div className='flex flex-wrap items-center px-4 py-2 space-x-1'>
                 <Button variant='ghost' size='sm'
                     onClick={() => editor.chain().focus().toggleBold().run()}

@@ -1,5 +1,6 @@
 import LandingPage from '@/app/components/LandingPage'
 import Overview from '@/app/components/Overview'
+import HomeMap from '@/app/components/HomeMap'
 
 export default function Home() {
   return (
@@ -7,6 +8,8 @@ export default function Home() {
       <LandingPage />
       
       <Overview />
+
+      <HomeMap />
 
     </div>
   )
