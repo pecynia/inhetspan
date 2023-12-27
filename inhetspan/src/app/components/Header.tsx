@@ -51,11 +51,15 @@ export default function Header() {
   return (
     <HeaderClient className='sticky z-10 top-0 left-0 w-full px-10 py-7 transition-transform duration-300'>
       <nav className='flex justify-between items-center relative'>
+
+        {/* Logo */}
         <Link href={'/'}>
           <div className='absolute top-0 -mt-3 pl-4'>
             <Image src='/logo.png' alt='Logo' width={160} height={100} priority />
           </div>
         </Link>
+
+        {/* Navigation */}
         <div className='hidden lg:block'>
           <div className='flex items-center space-x-8 mx-auto'>
             {routes.filter(route => route.includeInHeader).map((route, index) => (
@@ -82,6 +86,8 @@ export default function Header() {
             ))}
           </div>
         </div>
+
+        {/* Mobile navigation */}
         <div className='flex items-center gap-4 pr-4'>
           <ClientHeaderButtonWrapper />
 

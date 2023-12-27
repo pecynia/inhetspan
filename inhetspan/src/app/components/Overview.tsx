@@ -63,7 +63,7 @@ const Overview = () => {
             style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }}
         >
             {/* Offers Section */}
-            <div className='px-6 md:px-24 lg:px-56 w-full mx-auto'>
+            <div className='px-8 md:px-24 lg:px-56 w-full mx-auto'>
                 
                 {/* Huisartsen Section */}
                 <div className='pt-10'>

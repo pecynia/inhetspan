@@ -231,5 +231,5 @@ html.lenis {
 
 /* globals.css */
 .bg-gradient-custom {
-  background-image: linear-gradient(to right, hsl(var(--background)) 55%, transparent 90%);
+  background-image: linear-gradient(to right, hsl(var(--background)) 45%, transparent 90%);
 }
