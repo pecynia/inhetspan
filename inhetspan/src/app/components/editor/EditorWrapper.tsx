@@ -45,7 +45,7 @@ const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => 
         }
 
         fetchData()
-    }, [])
+    }, [documentId])
 
     if (status === "loading") {
         return <div className="flex justify-center items-center mt-5 w-full h-full">

@@ -25,8 +25,8 @@ import { Separator } from '@/app/components/ui/separator'
 import { hslToHex } from '@/lib/utils/hexToHsl'
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
-    if (!editor) return null
     const { status, data: session } = useSession()
+    if (!editor) return null
     if (!session) return null
     return (
         <div className='absolute top-0 -mt-32 z-10 bg-white shadow-lg rounded-xl'>
