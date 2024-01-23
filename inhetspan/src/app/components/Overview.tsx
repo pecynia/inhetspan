@@ -30,6 +30,7 @@ const Overview = () => {
       offset: ["start end", "end start"],
     })
 
+    // We use lenis for 
     useEffect(() => {
         const lenis = new Lenis({
           smoothWheel: true,
