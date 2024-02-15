@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Lenis from "@studio-freight/lenis"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Link from 'next/link'
-import { Pill, Syringe, Wheat, Speech, ExternalLink } from 'lucide-react'
+import { Pill, Syringe, Wheat, Speech, ExternalLink, Phone } from 'lucide-react'
 import { faTooth } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -18,9 +18,9 @@ const Overview = () => {
     ]
 
     const huisartsenLinks = [
-        { label: 'Huisartsenpraktijk Wibbelink', href: 'https://huisartswibbelink.onzehuisartsen.nl/' },
-        { label: 'Huisartsenpraktijk Linders & Verduijn', href: 'https://praktijklindersenverduijn.onzehuisartsen.nl/' },
-        { label: 'Huisartsenpraktijk van Duivenboden', href: 'https://praktijkvanduivenboden.onzehuisartsen.nl/' },
+        { label: 'Huisartsenpraktijk Wibbelink', href: 'https://huisartswibbelink.onzehuisartsen.nl/contact/' },
+        { label: 'Huisartsenpraktijk Linders & Verduijn', href: 'https://praktijklindersenverduijn.onzehuisartsen.nl/contact/' },
+        { label: 'Huisartsenpraktijk van Duivenboden', href: 'https://praktijkvanduivenboden.onzehuisartsen.nl/contact/' },
     ]
 
     const container = useRef<HTMLDivElement | null>(null)
@@ -81,7 +81,7 @@ const Overview = () => {
                             >
                                 <Link href={link.href} className=''>
                                     <p className='text-primary-foreground hover:text-blue-400 flex'>
-                                        {link.label} <ExternalLink size={20} className="ml-2" />
+                                        {link.label} <Phone size={20} className="ml-2" /> <ExternalLink size={20} className="ml-2" />
                                     </p>
                                 </Link>
                             </motion.div>
@@ -97,7 +97,12 @@ const Overview = () => {
                             <Link href={offer.href} key={offer.id} className={`${offer.color} rounded-lg cursor-pointer transition duration-300 ease-in-out hover:opacity-70`}>
                                 <div key={offer.id} className='p-4 w-full h-36 shadow-lg flex flex-col items-center justify-center'>
                                     {offer.icon}
-                                    <h3 className='text-normal font-semibold mt-4'>{offer.title}</h3>                                
+                                    <h3 className='text-normal font-semibold mt-4'>{offer.title}</h3>
+                                    <div className='flex justify-center items-center gap-2'>
+                                                                            <Phone size={20} className="mt-2" />
+                                    <ExternalLink size={20} className="mt-2" />    
+                                    </div>
+                       
                                 </div>
                             </Link>
                         ))}
