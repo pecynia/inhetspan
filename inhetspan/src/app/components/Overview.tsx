@@ -81,7 +81,7 @@ const Overview = () => {
                             >
                                 <Link href={link.href} className=''>
                                     <p className='text-primary-foreground hover:text-blue-400 flex'>
-                                        {link.label} <Phone size={20} className="ml-2" /> <ExternalLink size={20} className="ml-2" />
+                                        {link.label} <Phone size={24} className="ml-2" /> <ExternalLink size={20} className="ml-2" />
                                     </p>
                                 </Link>
                             </motion.div>
